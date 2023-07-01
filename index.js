@@ -1,5 +1,5 @@
 
-function makeLeaderBoard(arr,flag){
+function makeLeaderBoard(arr){
     if(!arr || arr.length===0)
     {
         return "Please give valid 2d array "
