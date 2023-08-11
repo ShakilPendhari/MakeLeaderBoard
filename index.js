@@ -2,8 +2,25 @@
 function makeLeaderBoard(arr){
     if(!arr || arr.length===0)
     {
-        return "Please give valid 2d array "
+        return "Please give valid 2d array"
     }
+   
+    for(let i=0; i<arr.length; i++)
+    {
+        if(arr[i].length!==2)
+        {
+            return `Please provide 2d array. 2D array is not at index ${i} and value is arr[${i}]=${arr[i]}`
+        }
+        if(typeof arr[i][0]==="number")
+        {
+             return `Please provide string at index ${i} and value is arr[${i}][0]=${arr[i][0]}`
+        }
+        if(typeof arr[i][1]==="string")
+        {
+             return `Please provide string at index ${i} and value is arr[${i}][1]='${arr[i][1]}'`
+        }
+    }
+   
     for(let i=0; i<arr.length; i++)
     {
         for(let j=0; j<arr.length-1-i; j++)
@@ -30,6 +47,7 @@ function makeLeaderBoard(arr){
         }
     }
 
+
     let newArray = []
     let rank = 1;
     let val = arr[0][1]
@@ -48,7 +66,6 @@ function makeLeaderBoard(arr){
     return newArray
 }
 
-// console.log(makeLeaderBoard([["rancho", 45],["chatur", 32],["raju", 30],["farhan", 28],["virus", 32],["joy", 45]]));
 module.exports = makeLeaderBoard
 
 
